@@ -1,0 +1,1 @@
+https://medium.com/backticks-tildes/how-to-dockerize-a-django-application-a42df0cb0a99
