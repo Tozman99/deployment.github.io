@@ -1,7 +1,6 @@
 
 {% block content%}
 	
-<img src="{{person.image.url}}" class="profile-image">
 <div class="informations-user">
     <p>
         <label>Username:</label>
@@ -11,25 +10,6 @@
     <p>
         {{person.user.email}}
     </p>
-</div>
-<form method="POST" enctype="multipart/form-data">
-
-    {% csrf_token %}
-    <div class="fieldWrapper">
-        {{ form.image.errors }}
-        
-        <div class="form_field">
-            <label for="{{ form.image.id_for_label }}">Change Your photo: 
-
-            </label>
-            {{ form.image }}
-        </div>
-        </div>
-        <input class="le_btn change-profile-photo" value="Change your Profile Photo" type="submit">
-</form>
-<div class="div_contain change-password-profile">
-    <a href="{% url 'users:Change_password' %}" class="change-password content-link">Change your password</a>
-
 </div>
 
 
