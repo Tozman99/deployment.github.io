@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.contrib.auth.models import User
-from .forms import User_form, Profile_form
+from .forms import User_form
 
 # Create your views here.
 
