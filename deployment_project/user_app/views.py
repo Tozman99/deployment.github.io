@@ -18,12 +18,10 @@ def signup_view(request):
         if form.is_valid():
 
             form.save()
-            obj = get_object_or_404(User, username=request.POST["username"])
-            User.objects.create(user=obj)
+            
+            return HttpResponseRedirect("users/login")
 
-            return HttpResponseRedirect("../login")
-
-        return render(request, "users/signup.html", {"form":form})
+        return render(request, "user_app/signup.html", {"form":form})
 
     return render(request, "user_app/signup.html", {"form": form})
 
@@ -33,7 +31,7 @@ def profile_view(request):
 
     obj = User.objects.get(username=request.user.username)
 
-    return render(request, "users/profile.html", {"person":obj})
+    return render(request, "user_app/profile.html", {"person":obj})
 
 def logout_view(request):
 
