@@ -40,6 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'test_app',
     'user_app',
+    'notification_app',
+    
 ]
 
 MIDDLEWARE = [
@@ -78,11 +80,14 @@ WSGI_APPLICATION = 'deployment_project.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': "kbyqyvdw",
+        "USER": "kbyqyvdw",
+        "PASSWORD": "yBfWJivXVTIvd3f7sPqiDCEwVOKPUAtl",
+        "HOST": "lallah.db.elephantsql.com",
+        "PORT": "5432",
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
@@ -116,7 +121,8 @@ USE_L10N = True
 
 USE_TZ = True
 
-LOGIN_REDIRECT_URL = "yourprofile"
+LOGIN_REDIRECT_URL = "../users/yourprofile"
+
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
